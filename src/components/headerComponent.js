@@ -5,7 +5,7 @@ import {
   Navbar,
   Carousel
 } from "react-bootstrap";
-
+import InfiniteCarousel from "react-leaf-carousel";
 
 
 function Header() {
@@ -31,20 +31,19 @@ function Header() {
             <Button variant="outline-secondary" size="sm" className="align-middle">Search</Button>
           </Form> */}
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="m-auto topLink">
-            <Carousel controls={true} indicators = {false} interval={null}>
-            <Carousel.Item >
-            <Nav.Link href="#products" style={{color:"white"}}>Products</Nav.Link>
-            </Carousel.Item>
-            <Carousel.Item>
-            <Nav.Link href="#rooms"style={{color:"white"}}>Rooms</Nav.Link>
-            </Carousel.Item>
-            <Carousel.Item>
-            <Nav.Link href="#deals"style={{color:"white"}}>Deals</Nav.Link>
-            </Carousel.Item>
-            </Carousel>
-          </Nav>
-         
+        <Nav className="m-auto topLink">
+            
+    <Nav.Link href="#products" style={{color:"white"}}>Products</Nav.Link>
+  
+
+    <Nav.Link href="#rooms"style={{color:"white"}}>Rooms</Nav.Link>
+   
+    
+    <Nav.Link href="#deals"style={{color:"white"}}>Deals</Nav.Link>
+    
+
+
+            </Nav>
           <Nav.Link href="#truck">
             <i className="fa fa-truck fa-lg fa-flip-horizontal" />
           </Nav.Link>
