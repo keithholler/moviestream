@@ -2,12 +2,13 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    left: 0;
+    left: 25px;
     min-height: 100vh !important;
     z-index: 100;
     padding: 48px 0 0;
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-    border-right: 1px solid white;
+ 
+    
 }
 #sidebar-wrapper{
     min-height: 100vh !important;
@@ -17,6 +18,7 @@
     -moz-transition: margin .25s ease-out;
     -o-transition: margin .25s ease-out;
     transition: margin .25s ease-out;
+    border-right: 1px solid white;
 }
 #sidebar-wrapper .sidebar-heading {
     padding: 0.875rem 1.25rem;
@@ -30,7 +32,7 @@
 
 
 .header{
-    animation: bounce 2s linear;
+    animation: bounce .5s linear;
     animation-iteration-count: 1
 }
 
@@ -75,33 +77,7 @@
     animation-delay: 1.2s;
   }
 
-  .move{
-    pointer-events: auto;
-  }
- 
-.movies:active {
-    animation: bounce 2s linear;
-    animation-iteration-count: 1;
-   
-}
 
-.movies:nth-child(0) {
-    animation-delay: 0.1s;
-  }
-  
-  .movies:nth-child(1) {
-    animation-delay: 0.2s;
-  }
-  .movies:nth-child(2) {
-    animation-delay: 0.3s;
-  }
-  
-  .movies:nth-child(3) {
-    animation-delay: 0.4s;
-  }
-  .movies:nth-child(4) {
-    animation-delay: 0.5s;
-  }
 /* ANIMATION */
 @keyframes bounce {
     1% {
@@ -126,4 +102,52 @@
         color:purple
     }
 
+  }
+  .nav-link {
+  text-decoration: none;
+  }
+
+  .nav-link {
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    padding: 20px 0px;
+    margin: 0px 20px;
+    display: inline-block;
+    position: relative;
+    opacity: 0.75;
+  }
+  
+  .nav-link:hover {
+    opacity: 1;
+  }
+  .nav-link::before {
+    transition: 300ms;
+    height: 1px;
+    content: "";
+    position: absolute;
+    background-color: white;
+  }
+  .nav-link::before {
+    width: 0%;
+    bottom: 10px;
+    color:white;
+  }
+  
+  .nav-link:hover::before {
+    width: 100%;
+    color:white;
+  }
+
+  .nav-link:focus::before {
+    width: 100%;
+    color:white;
+  
+  }
+
+  .nav-link:focus{
+   
+    opacity: 1;
   }
