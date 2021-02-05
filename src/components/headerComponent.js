@@ -1,38 +1,49 @@
 import React, { useState } from "react";
-import { Button, Nav, Navbar, Carousel } from "react-bootstrap";
-import InfiniteCarousel from "react-leaf-carousel";
+import { Button, Navbar, Form, FormControl } from "react-bootstrap";
 
 function Header() {
+  const [copy, setCopy] = useState("MovieStream");
   return (
     <div>
-      <Navbar expand="md" sticky="top" style={{ height: "50px" }}>
-        <Navbar.Brand href="#home" className="ml-3 mr-5 "></Navbar.Brand>
+      <Navbar expand="md" fixed="top" style={{ backgroundColor: "black" }}className="d-flex flex-row justify-content-between">
+        <Navbar.Brand href="/home" className="">
+          <span aria-label={copy} role={copy}>
+            {copy.split("").map(function (char, index) {
+              return (
+                <span
+                  className="header"
+                  aria-hidden="true"
+                  key={index}
+                  style={{ color: "red" }}
+                >
+                  {char}
+                </span>
+              );
+            })}
+          </span>
+        </Navbar.Brand>
 
-        <Nav className="m-auto topLink">
-          <Nav.Link href="#products" style={{ color: "white" }}>
-            Products
-          </Nav.Link>
-
-          <Nav.Link href="#rooms" style={{ color: "white" }}>
-            Rooms
-          </Nav.Link>
-
-          <Nav.Link href="#deals" style={{ color: "white" }}>
-            Deals
-          </Nav.Link>
-        </Nav>
-        <Nav.Link href="#truck">
-          <i className="fa fa-truck fa-lg fa-flip-horizontal" />
-        </Nav.Link>
-        <Nav.Link href="#user">
-          <i className="fa fa-user fa-lg " />
-        </Nav.Link>
-        <Nav.Link href="#user">
-          <i className="fa fa-heart fa-lg " />
-        </Nav.Link>
-        <Nav.Link href="#user">
-          <i className="fa fa-shopping-basket fa-lg " />
-        </Nav.Link>
+        <Form inline className="d-flex justify-content-center text-center">
+          <FormControl
+            type="search"
+            placeholder="Search"
+            className="mr-sm-2 formControl align-middle  searchBox"
+            style={{
+              borderColor: "",
+              color: "white",
+              backgroundColor: "black",
+              height:"30px"
+              
+            }}
+          />
+          <Button
+            variant="outline-secondary"
+            size="sm"
+            className="align-middle"
+          >
+            Search
+          </Button>
+        </Form>
       </Navbar>
 
       <div
