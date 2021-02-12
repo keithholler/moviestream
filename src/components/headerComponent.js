@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { Button, Navbar, Form, FormControl } from "react-bootstrap";
-
-function Header() {
+import { MOVIES } from "../shared/movies";
+function Header(props) {
+  const [movies, setMovies] = useState(MOVIES);
   const [copy, setCopy] = useState("MovieStream");
+
+
+
+
   return (
     <div>
       <Navbar expand="md" fixed="top" style={{ backgroundColor: "black" }}className="d-flex flex-row justify-content-between">

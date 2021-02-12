@@ -19,7 +19,8 @@ const Sidebar = (props) => {
         </div>
 
        
-
+      
+ 
         <Nav.Item>
           <Nav.Link
             href="/home"
@@ -30,20 +31,7 @@ const Sidebar = (props) => {
           </Nav.Link>
         </Nav.Item>
         <Nav.Link href="/movies" className="ml-1 mm" style={{ color: "white" }}>
-          <span
-            style={{ color: "white" }}
-            className=" text-center"
-            aria-label={movies}
-            role={movies}
-          >
-            {movies.split("").map(function (char, index) {
-              return (
-                <span aria-hidden="true" key={index}>
-                  {char}
-                </span>
-              );
-            })}
-          </span>
+          Movies
         </Nav.Link>
         <Nav.Item>
           <Nav.Link href="/shows" className="ml-1" style={{ color: "white" }}>

@@ -9,6 +9,8 @@ import Movies from "./moviesComponent";
 import Shows from "./showComponent";
 import Home from "./homeComponent";
 
+
+
 const showHome = () => {
   if (window.location.pathname === "/home") {
     return <Home/>

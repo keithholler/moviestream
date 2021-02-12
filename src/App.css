@@ -55,3 +55,18 @@ body,
   }
 
 }
+
+
+.media:hover{
+  position:relative;
+  transform: scale(2);
+  transition-duration: 1s;
+  z-index:999;
+
+}
+
+.media{
+  transform: scale(1);
+  transition-duration: 1s;
+
+}
