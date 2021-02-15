@@ -3,34 +3,51 @@ import React, { Component, useState } from "react";
 import { MOVIES } from "../shared/movies";
 
 function compare(a, b) {
-    // Use toUpperCase() to ignore character casing
-    const titleA = a.Title.toUpperCase();
-    const titleB = b.Title.toUpperCase();
-  
-    let comparison = 0;
-    if (titleA > titleB) {
-      comparison = 1;
-    } else if (titleA < titleB) {
-      comparison = -1;
-    }
-    return comparison;
+  // Use toUpperCase() to ignore character casing
+  const titleA = a.Title.toUpperCase();
+  const titleB = b.Title.toUpperCase();
+
+  let comparison = 0;
+  if (titleA > titleB) {
+    comparison = 1;
+  } else if (titleA < titleB) {
+    comparison = -1;
   }
+  return comparison;
+}
 
 function Shows(props) {
   const [movies, setMovies] = useState(MOVIES);
 
-  const movieList = movies.filter(movie => movie.Type === "series").sort(compare).map((movie,index)=> {
-  
-    return (
-        <div  key={index} style={{ color: "white" }}>
+  const movieList = movies
+    .filter((movie) => movie.Type === "series")
+    .sort(compare)
+    .map((movie, index) => {
+      return (
+        <div key={index} style={{ color: "white" }}>
           {/* {movie.Title} */}
-          <img  className="m-5 media"  style={{ width: "150px" }} src={movie.Poster} alt={movie.Title} />
+          <img
+            className="m-5 media"
+            style={{ width: "150px" }}
+            src={movie.Poster}
+            alt={movie.Title}
+          />
         </div>
       );
     });
-  
-    return <div className="d-flex flex-row flex-wrap" style={{ marginTop: "110px" }}>{movieList}</div>;
-  
+
+  return (
+    <>
+ 
+      <div
+        className="d-flex flex-row flex-wrap mediaList"
+        style={{ marginTop: "110px" }}
+      >
+        {movieList}
+      </div>
+      ;
+    </>
+  );
 }
 
 export default Shows;

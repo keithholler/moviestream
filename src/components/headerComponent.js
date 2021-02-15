@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Button, Navbar, Form, FormControl } from "react-bootstrap";
-import { MOVIES } from "../shared/movies";
+
 function Header(props) {
-  const [movies, setMovies] = useState(MOVIES);
+
   const [copy, setCopy] = useState("MovieStream");
 
 
@@ -10,7 +10,9 @@ function Header(props) {
 
   return (
     <div>
-      <Navbar expand="md" fixed="top" style={{ backgroundColor: "black" }}className="d-flex flex-row justify-content-between">
+      
+      <Navbar expand="md" fixed="top" style={{ backgroundColor: "rgba(0, 0, 0, 0)"}}className="d-flex flex-row justify-content-between">
+
         <Navbar.Brand href="/home" className="">
           <span aria-label={copy} role={copy}>
             {copy.split("").map(function (char, index) {
@@ -22,12 +24,14 @@ function Header(props) {
                   style={{ color: "red" }}
                 >
                   {char}
+                  
                 </span>
               );
             })}
+           
           </span>
         </Navbar.Brand>
-
+            {props.nameMain}
         <Form inline className="d-flex justify-content-center text-center">
           <FormControl
             type="search"

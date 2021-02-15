@@ -56,17 +56,35 @@ body,
 
 }
 
-
+@media only screen and (min-width: 500px) {
 .media:hover{
   position:relative;
-  transform: scale(2);
+  transform: scale(1.5);
   transition-duration: 1s;
   z-index:999;
-
+}
 }
 
 .media{
   transform: scale(1);
   transition-duration: 1s;
 
+}
+
+.mediaList {
+ animation: fadeIn 2s linear;
+}
+/* ANIMATION */
+@keyframes fadeIn {
+  0% {
+    opacity:0
+      
+  }
+  100% {
+    opacity:1
+  }
+}
+
+.navBoard{
+  border-bottom: 1px solid white;
 }

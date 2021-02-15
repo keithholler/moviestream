@@ -28,7 +28,11 @@ function Home(props) {
     );
   });
 
-  return <div className="d-flex flex-row flex-wrap" style={{ marginTop: "110px" }}>{movieList}</div>;
+  return(
+  <>
+  
+  <div className="d-flex flex-row flex-wrap mediaList" style={{ marginTop: "110px" }}>{movieList}</div>;
+  </>)
 }
 
 export default Home;

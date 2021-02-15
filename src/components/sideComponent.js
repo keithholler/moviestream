@@ -5,22 +5,20 @@ import "../CSS/Sidebar.css";
 const Sidebar = (props) => {
 
   const [movies, setMovies] = useState("Movies");
+  const [name, setName] = useState("");
 
   return (
     <>
- 
+
       
       <Nav
-        className="col-md-12 d-none d-md-block sidebar "
+        className="col-md-12 d-none d-block sidebar mt-5"
         activeKey="/home"
         //onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
       >
         <div className="sidebar-sticky">
         </div>
 
-       
-      
- 
         <Nav.Item>
           <Nav.Link
             href="/home"
