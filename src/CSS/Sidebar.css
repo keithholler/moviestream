@@ -20,7 +20,8 @@
     transition: margin .25s ease-out;
     border-right: 1px solid white;
     position: fixed;
-    z-index: 1
+    z-index: 1;
+    background-color: black;
 }
 #sidebar-wrapper .sidebar-heading {
     padding: 0.875rem 1.25rem;
@@ -31,7 +32,13 @@
 #page-content-wrapper {
     min-width: 0;
     width: 100%;
-    padding-left:30%;
+    padding-left:25%;
+    background-color: black;
+}
+
+@media only screen and (min-width: 300px) and (max-width:550px) {
+  #page-content-wrapper { padding-left:45%;}
+
 }
 
 

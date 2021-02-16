@@ -27,8 +27,8 @@ function Shows(props) {
         <div key={index} style={{ color: "white" }}>
           {/* {movie.Title} */}
           <img
-            className="m-5 media"
-            style={{ width: "150px" }}
+            className="m-4 media"
+            style={{ width: "125px" }}
             src={movie.Poster}
             alt={movie.Title}
           />

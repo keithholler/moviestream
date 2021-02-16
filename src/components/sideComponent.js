@@ -36,6 +36,11 @@ const Sidebar = (props) => {
             Shows
           </Nav.Link>
         </Nav.Item>
+        <Nav.Item>
+        <Nav.Link href="/favorites" className="ml-1" style={{ color: "white" }}>
+            Favorites
+          </Nav.Link>
+        </Nav.Item>
       </Nav>
    
   

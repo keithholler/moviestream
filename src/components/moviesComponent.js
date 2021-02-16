@@ -1,5 +1,6 @@
 import React, { Component, useState } from "react";
 // import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
+import { Card,Button } from "react-bootstrap";
 
 import { MOVIES } from "../shared/movies";
 
@@ -22,29 +23,39 @@ function compare(a, b) {
 
 function Movies(props) {
   const [movies, setMovies] = useState(MOVIES);
-
+  const [isShown, setIsShown] = useState(false);
+  
 
   const movieList = movies
     .filter((movie) => movie.Type === "movie")
     .sort(compare)
     .map((movie, index) => {
       return (
-        <div key={index} style={{ color: "white" }}>
-          {/* {movie.Title} */}
-          <img
-            className="m-5 media"
-            style={{ width: "150px" }}
-            src={movie.Poster}
-            alt={movie.Title}
-          />
-        </div>
+
+        <Card key={index} style={{ color: "white", backgroundColor:"black" }} className="m-4 media"  >
+        <Card.Img
+         
+          style={{ width: "125px" }}
+          src={movie.Poster}
+          alt={movie.Title}
+        />
+      <Card.ImgOverlay className="d-flex align-items-start justify-content-center" style={{top:"-30px"}}>
+      {isShown && (
+                <i
+                className="fa fa-heart fa-sm "
+       
+              />)}
+       
+            </Card.ImgOverlay>
+        </Card>
       );
     });
 
   return (
   <>
 
-      <div className="d-flex flex-row flex-wrap mediaList" style={{ marginTop: "110px" }}>
+      <div className="d-flex flex-row flex-wrap mediaList" style={{ marginTop: "110px" }} onMouseEnter={() => setIsShown(true)}
+        onMouseLeave={() => setIsShown(false)}>
         
        
            {movieList}

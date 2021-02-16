@@ -1,46 +1,41 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import Sidebar from "./sideComponent";
-
+import SearchField from "react-search-field";
 import "../CSS/Sidebar.css";
 import {
   Container,
   Row,
   Col,
-  Card,
   Form,
   Button,
-  Nav,
   Navbar,
   FormControl,
 } from "react-bootstrap";
-
+//import { MOVIES } from "../shared/movies";
 import Movies from "./moviesComponent";
 import Shows from "./showComponent";
 import Home from "./homeComponent";
-
-
+import Favorites from "./FavoriteComponent";
 
 function Main(props) {
+  // const [movies, setMovies] = useState(MOVIES);
   const [copy, setCopy] = useState("MovieStream");
   const [title, setTitle] = useState("");
 
   useEffect(() => {
     if (window.location.pathname === "/home") {
-      setTitle("Home")
+      setTitle("Home");
+    } else if (window.location.pathname === "/movies") {
+      setTitle("Movies");
+    } else if (window.location.pathname === "/shows") {
+      setTitle("Shows");
+    }else if (window.location.pathname === "/favorites") {
+      setTitle("Favorites");
     }
-    else if (window.location.pathname === "/movies"){
-      setTitle("Movies")
-    }
-    else if (window.location.pathname === "/shows"){
-      setTitle("Shows")
-    }
-    
-    
-  });
+  }, []);
 
   const showHome = () => {
-  
     if (window.location.pathname === "/home") {
       return <Home />;
     }
@@ -55,15 +50,20 @@ function Main(props) {
       return <Shows />;
     }
   };
+  const showFavorites = () => {
+    if (window.location.pathname === "/favorites") {
+      return <Favorites />;
+    }
+  };
+
   return (
     <div>
       <Navbar
         expand="md"
         fixed="top"
         style={{ backgroundColor: "black" }}
-        className="d-flex flex-row justify-content-between navBoard"
+        className="d-flex flex-row align-items-center navBoard"
       >
-      
         <Navbar.Brand href="/home" className="">
           <span aria-label={copy} role={copy}>
             {copy.split("").map(function (char, index) {
@@ -72,17 +72,17 @@ function Main(props) {
                   className="header"
                   aria-hidden="true"
                   key={index}
-                  style={{ color: "red" }}
+                  style={{ color: "red",fontSize: "30px" }}
                 >
-                  {char}
+                 {char}
                 </span>
               );
             })}
-             
           </span>
-        </Navbar.Brand>
-        <h5 style={{color:"white"}}>{title}</h5> 
-        <Form inline className="d-flex justify-content-center text-center">
+        </Navbar.Brand><h5 style={{ color: "white",fontSize:"30px"}} className="mx-auto pt-2">{title}</h5>
+       
+      
+        {/* <Form inline className="d-flex justify-content-center text-center">
           <FormControl
             type="search"
             placeholder="Search"
@@ -101,7 +101,7 @@ function Main(props) {
           >
             Search
           </Button>
-        </Form>
+        </Form> */}
       </Navbar>
 
       <div
@@ -115,10 +115,11 @@ function Main(props) {
           <Col xs={2} id="sidebar-wrapper">
             <Sidebar />
           </Col>
-          <Col xs={10} id="page-content-wrapper">
+          <Col xs={12} id="page-content-wrapper">
             {showHome()}
             {showMovies()}
             {showShows()}
+            {showFavorites()}
           </Col>
         </Row>
       </Container>
