@@ -22,6 +22,7 @@ function Main(props) {
   // const [movies, setMovies] = useState(MOVIES);
   const [copy, setCopy] = useState("MovieStream");
   const [title, setTitle] = useState("");
+ 
 
   useEffect(() => {
     if (window.location.pathname === "/home") {
@@ -37,6 +38,9 @@ function Main(props) {
 
   const showHome = () => {
     if (window.location.pathname === "/home") {
+      return <Home />;
+    }
+    if (window.location.pathname === "/") {
       return <Home />;
     }
   };
